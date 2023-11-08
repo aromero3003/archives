@@ -1,0 +1,94 @@
+\documentclass[a4paper]{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[spanish]{babel}
+\usepackage{amsmath, amssymb}
+\usepackage{derivative}
+\usepackage{tabularx}
+\usepackage{siunitx}
+
+\begin{document}
+
+\makeatletter
+\renewcommand{\@seccntformat}[1]{}
+\makeatother
+\section{PENDULO FISICO} % (fold)
+\label{sec:pendulo_fisico}
+
+\vspace{1cm}
+\textbf{Grupo N°}: 06
+
+\vspace{1cm}
+
+\textbf{Integrantes}:
+\begin{itemize}
+    \item Gaspes Marcellini, Valentín
+    \item Villafañe, Solange Agustina
+    \item Romero Gonzales, Alan Xochtiel
+    \item Lozano, Lourdes Nazarena
+    \item Skurski, Dante Martín
+    \item Colart Sosa, Luz Rosario
+\end{itemize}
+
+\vspace{2cm}
+\begin{table}[h]
+    \centering
+    % \label{tab:data}
+    \begin{tabularx}{1\textwidth}{
+      | >{\centering\arraybackslash}X   | >{\centering\arraybackslash}X   | >{\centering\arraybackslash}X   | >{\centering\arraybackslash}X   | >{\centering\arraybackslash}X   | >{\centering\arraybackslash}X   | >{\centering\arraybackslash}X   | >{\centering\arraybackslash}X |
+    }
+        \hline
+        \( l_{(\mbox{m})} \) & \( \Delta l _{(\mbox{m})}\) & \( m_{(\mbox{kg})} \) & \( \Delta m_{(\mbox{kg})} \) & \( M_{(\mbox{kg})} \) & \( \Delta M_{(\mbox{kg})} \) & \( \alpha \) & \( \Delta \alpha \) \\ \hline
+                & & & & & & & \\ \hline
+                % & & & & & & & \\ \hline
+    \end{tabularx}
+    \caption{Mediciones}
+\end{table}
+
+\subsection{Cálculos} % (fold)
+\label{sub:calculos}
+Altura de la masa al final de la colisión:
+\[ \cos\alpha = \frac{l-h}{l} \]
+\[ h = l - l\cos\alpha \]
+\[ h = l(1-\cos\alpha) \]
+
+Durante la colisión:
+\[ \vec{P_o} = \vec{P_f} \]
+\[ m \vec{V} = (m + M) \vec{V_1} \]
+
+Después de la colisión, considerando rozamiento despreciable
+
+\begin{align*}
+    Ec_o &= Ec_f \\
+    \frac{1}{2}(m+M)V_1^2 &= (m + M) g h \\
+    \frac{1}{2} (m+M) \frac{m^2 V^2}{(m+M)^2} &= (m+M) gh \\
+    V^2 &= \frac{2(m+M)^2 gh}{m^2} \\
+    V &= \sqrt{\frac{2(m+M)^2 g [l(1+\cos\alpha)]}{m^2}} \\
+    V &= \frac{m+M}{m} \sqrt{2gl(1+\cos \alpha)} \\
+    V &= \left(1+ \frac{M}{m}\right) \sqrt{2gl(1+\cos \alpha)} \\
+\end{align*}
+
+% subsection Calculos (end)
+
+
+\subsection{Propagación de errores} % (fold)
+\label{sub:propagacion_de_errores}
+
+Usando el método de derivadas parciales.
+\begin{align*}
+    \Delta V &= \left|\pdv{V}{l}\right| \Delta l + \left|\pdv{V}{m}\right| \Delta m + \left|\pdv{V}{M}\right| \Delta M + \left|\pdv{V}{\alpha}\right| \Delta \alpha \\
+    \pdv{V}{l} &= \frac{m+M}{2 m \sqrt{l} } \sqrt{2g(1+\cos \alpha)} = \\
+    \pdv{V}{m} &= -\frac{M}{m^2} \sqrt{2gl(1+\cos \alpha)} = \\
+    \pdv{V}{M} &= \frac{\sqrt{2gl(1+\cos \alpha)}}{m} = \\
+    \pdv{V}{\alpha} &= - \frac{m+M}{m} \frac{\sqrt{2gl} \sin\alpha}{2 \sqrt{1 + \cos\alpha}} = \\
+    \Delta V &= \\
+    V \pm \Delta V &= 
+\end{align*}
+
+% subsection Propagacion_de_errores (end)
+
+
+% section pendulo fisico (end)
+
+\end{document}
